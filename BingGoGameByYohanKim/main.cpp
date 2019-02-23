@@ -39,6 +39,7 @@ int main()
 
 	while (true)
 	{
+		system("cls");
 
 		for (int i = 0; i < 5; ++i)
 		{
@@ -56,9 +57,10 @@ int main()
 			}
 
 			cout << endl;
-		
+			
 		}
 		
+
 		cout << "Type Number (0 == EXIT) : ";
 
 		int iInput;
@@ -76,7 +78,7 @@ int main()
 			continue;
 		}
 
-		// Check repeated number
+		// Check repeated numbers
 		bool bRepeatedNumber = true;
 
 		for (int i = 0; i < 25; ++i)
