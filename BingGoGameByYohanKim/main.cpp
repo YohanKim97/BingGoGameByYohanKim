@@ -6,6 +6,8 @@ using namespace std;
 int main()
 {
 
+
+
 	// Creating 5 X 5 BingGo Game
 
 	srand((unsigned int)time(0));
@@ -32,14 +34,12 @@ int main()
 	}
 
 
-
-
-
 	//Print out 5 X 5 BingGo Board
 	cout << "=================== Player ===================" << endl;
 
 	while (true)
 	{
+
 		for (int i = 0; i < 5; ++i)
 		{
 			for (int j = 0; j < 5; ++j)
@@ -56,7 +56,24 @@ int main()
 		
 		}
 		
-		break;
+		cout << "Type Number (0 == EXIT) : ";
+
+		int iInput;
+		
+		cin >> iInput;;
+
+		//EXIT the Game
+		if (iInput == 0)
+		{
+			break;
+		}
+		//Take input between 1 ~ 25  numbers
+		else if (iInput < 1 || iInput > 25)
+		{
+			continue;
+		}
+
+
 
 	}
 	return 0;
