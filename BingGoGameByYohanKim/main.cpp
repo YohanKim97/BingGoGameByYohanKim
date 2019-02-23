@@ -46,10 +46,13 @@ int main()
 			{
 				
 				if (iNumber[i * 5 + j] == INT_MAX)
+				{
 					cout << " * \t ";
-
+				}
 				else
+				{
 					cout << iNumber[i * 5 + j] << " \t ";
+				}
 			}
 
 			cout << endl;
@@ -73,7 +76,25 @@ int main()
 			continue;
 		}
 
+		// Check repeated number
+		bool bRepeatedNumber = true;
 
+		for (int i = 0; i < 25; ++i)
+		{
+			if (iInput == iNumber[i])
+			{
+				bRepeatedNumber = false;
+
+				iNumber[i] = INT_MAX;
+
+				break;
+			}
+		}
+
+		if (bRepeatedNumber)
+		{
+			continue;
+		}
 
 	}
 	return 0;
