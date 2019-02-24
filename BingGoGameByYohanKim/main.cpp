@@ -1,12 +1,11 @@
 #include <iostream>
 #include <time.h>
+#include <math.h>
 
 using namespace std;
 
 int main()
 {
-
-
 
 	// Creating 5 X 5 BingGo Game
 
@@ -34,12 +33,18 @@ int main()
 	}
 
 
+
+
 	//Print out 5 X 5 BingGo Board
-	cout << "=================== Player ===================" << endl;
+	int iBingGoLine = 0;
 
 	while (true)
 	{
 		system("cls");
+
+
+		cout << "=================== Player ===================" << endl;
+
 
 		for (int i = 0; i < 5; ++i)
 		{
@@ -60,6 +65,14 @@ int main()
 			
 		}
 		
+		if (iBingGoLine == 5)
+		{
+			cout << " WIN !!" << endl;
+			break;
+		}
+
+
+		cout << "BingGo Line : " << iBingGoLine << endl << endl;
 
 		cout << "Type Number (0 == EXIT) : ";
 
@@ -97,6 +110,46 @@ int main()
 		{
 			continue;
 		}
+
+
+		// BingGO Line Check
+		iBingGoLine = 0;
+
+		int iStar1 = 0, iStar2 = 0;
+		for (int i = 0; i < 5; ++i)
+		{
+			iStar1 = iStar2 = 0;
+			for (int j = 0; j < 5; ++j)
+			{
+				//Row
+				if (iNumber[i * 5 + j] == INT_MAX)
+				{
+					++iStar1;
+				}
+
+				//Column
+				if (iNumber[j * 5 + i] == INT_MAX)
+				{
+					++iStar2;
+				}
+
+		
+	
+	
+			}
+			if (iStar1 == 5)
+			{
+				++iBingGoLine;
+			}
+
+			if (iStar2 == 5)
+			{
+				++iBingGoLine;
+			}
+
+		}
+
+	
 
 	}
 	return 0;
